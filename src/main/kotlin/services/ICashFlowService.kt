@@ -15,7 +15,7 @@ interface ICashFlowService {
     suspend fun getAvailableSources(): List<String>
     suspend fun getAvailableLabels(): List<String>
 
-    
+
     suspend fun createRawCashFlow(
         id: String, type: String, source: String, label: String,
         amount: Double, createdAt: String, updatedAt: String, description: String
