@@ -10,12 +10,12 @@ interface ICashFlowService {
     suspend fun updateCashFlow(id: String, type: String, source: String, label: String, amount: Double, description: String): Boolean
     suspend fun removeCashFlow(id: String): Boolean
 
-    // Fungsi tambahan untuk dropdown/filter
+
     suspend fun getAvailableTypes(): List<String>
     suspend fun getAvailableSources(): List<String>
     suspend fun getAvailableLabels(): List<String>
 
-    // Fungsi untuk setup data massal
+    
     suspend fun createRawCashFlow(
         id: String, type: String, source: String, label: String,
         amount: Double, createdAt: String, updatedAt: String, description: String

@@ -38,10 +38,10 @@ class CashFlowService(private val repository: ICashFlowRepository) : ICashFlowSe
                 val start = LocalDate.parse(d, formatter).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
                 data = data.filter { Instant.parse(it.createdAt).toEpochMilli() >= start }
             }
-            // src/main/kotlin/services/CashFlowService.kt
+
 
             query.endDate?.let { d ->
-                // Gunakan .plusDays(1) untuk mencakup seluruh hari yang dipilih
+
                 val end = LocalDate.parse(d, formatter).plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
                 data = data.filter { Instant.parse(it.createdAt).toEpochMilli() < end }
             }
